@@ -2,7 +2,7 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
 
 ADD app.py / 
-ADD azdevopsdemo.pkl / 
+ADD sklearn_regression_model.pkl / 
 ADD requirements.txt / 
 
 # Set the folder where uwsgi looks for the app
