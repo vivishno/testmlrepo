@@ -1,5 +1,5 @@
 # Pull a pre-built alpine docker image with nginx and python3 installed
-FROM python:rc-alpine3.10
+FROM python:3
 
 ADD app.py / 
 ADD sklearn_regression_model.pkl / 
