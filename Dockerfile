@@ -2,7 +2,7 @@
 FROM python:3
 
 ADD app.py / 
-ADD sklearn_regression_model.pkl / 
+ADD azdevopsdemo.pkl / 
 ADD requirements.txt / 
 
 # Set the folder where uwsgi looks for the app
