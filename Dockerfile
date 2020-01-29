@@ -11,6 +11,7 @@ WORKDIR /
 RUN pip install --no-cache-dir -U pip
 RUN pip install --no-cache-dir -r /requirements.txt
 
+
 EXPOSE 80 
 
 # Run the flask server for the endpoints 
