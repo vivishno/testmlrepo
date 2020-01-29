@@ -5,7 +5,6 @@ ADD app.py /
 ADD sklearn_regression_model.pkl / 
 ADD requirements.txt / 
 
-
 # Set the folder where uwsgi looks for the app
 WORKDIR /
 
