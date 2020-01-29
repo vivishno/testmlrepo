@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: ashkumarmdevC1.azurecr.io/k8sdemo
+  repository: secondcontainer1.azurecr.io/k8sdemo
   tag: ${{ github.sha }}
   pullPolicy: IfNotPresent
 nameOverride: "python"
