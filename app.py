@@ -24,7 +24,7 @@ def hell0():
 	
 if __name__ == '__main__':
     model = None;
-    port = 5000
+    port = 8080
     
     pkl_file = open('azdevopsdemo.pkl', 'rb')
     model = pickle.load(pkl_file)
