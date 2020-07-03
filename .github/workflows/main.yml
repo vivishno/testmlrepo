@@ -7,28 +7,19 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - uses: Azure/docker-login@v1
-      with:
-        login-server: gsaralHotline.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
-
-    - run: |
-        docker build . -t gsaralHotline.azurecr.io/k8sdemo:${{ github.sha }}
-        docker push gsaralHotline.azurecr.io/k8sdemo:${{ github.sha }}
 
     - name: Set Context for Azure Kubernetes Cluster using azure/aks-set-context@v1 action
       uses: azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: demoaksappup
-        resource-group: launchsvcishitam
+        cluster-name: k8cluster
+        resource-group: PythonSdk
 
     - uses: Azure/k8s-create-secret@v1
       with:
-        container-registry-url: gsaralHotline.azurecr.io
-        container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-        container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        container-registry-url: acrc2zegvu7zemng.azurecr.io
+        container-registry-username: acrc2zegvu7zemng
+        container-registry-password: fmdPwgET16HQLz3OWzu9QG=jifqduJ7e
         secret-name: demo-k8s-secret
 
     - uses: azure/k8s-bake@v1
@@ -42,6 +33,6 @@ jobs:
       with:
         manifests: ${{ steps.bake.outputs.manifestsBundle }}
         images: |
-          gsaralHotline.azurecr.io/k8sdemo:${{ github.sha }}
+          acrc2zegvu7zemng.azurecr.io/mydocker:latest
         imagepullsecrets: |
           demo-k8s-secret
