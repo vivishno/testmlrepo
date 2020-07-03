@@ -33,6 +33,6 @@ jobs:
       with:
         manifests: ${{ steps.bake.outputs.manifestsBundle }}
         images: |
-          acrc2zegvu7zemng.azurecr.io/mydocker:latest
+          acrc2zegvu7zemng.azurecr.io/ang:latest
         imagepullsecrets: |
           demo-k8s-secret
