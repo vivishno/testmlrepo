@@ -3,16 +3,16 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: acrc2zegvu7zemng.azurecr.io/mydocker
+  repository: acrc2zegvu7zemng.azurecr.io/ang
   tag: latest
   pullPolicy: IfNotPresent
-nameOverride: "vivek"
-fullnameOverride: "vivishno"
+nameOverride: "test1"
+fullnameOverride: "test01"
 service:
-  name: python
+  name: angular
   type: LoadBalancer
-  externalPort: 8080
-  internalPort: 8080
+  externalPort: 8081
+  internalPort: 8081
 resources:
   limits:
     cpu: 100m
